@@ -6,7 +6,7 @@ config = {
         
         }, 
     'data' : {
-        'batch size': 32,
+        'batch size': 128,
         'num workers': 8, 
         'image shape': (1, 28, 28),
         'num classes': 10, 
@@ -17,10 +17,10 @@ config = {
          'generator blocks' : 3, 
     }, 
     'discriminator' : {
-        'discriminator blocks' : 3, 
+        'discriminator blocks' : 2, 
     }, 
     'hyperparameters' : {
-        'latent dimension': 100,
+        'latent dimension': 128,
         'learning rate': 0.0002, 
         'beta1': 0.5,
         'beta2': 0.999,

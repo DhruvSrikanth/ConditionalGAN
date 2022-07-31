@@ -1,5 +1,12 @@
 # Conditional GAN Experiments Package
 
+<p align="left">
+    <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.9.6-ff69b4.svg" /></a>
+    <a href= "https://pytorch.org/">
+    <img src="https://img.shields.io/badge/PyTorch-1.13-2BAF2B.svg" /></a>
+</p>
+
 Simulate experiments with a Conditional GAN architecture package.
 
 ## Setting up the Conditional GAN Experiments package
