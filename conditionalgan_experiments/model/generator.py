@@ -106,8 +106,7 @@ class Generator(nn.Module):
         Returns:
             The output sample.
         '''
-        
-        x = torch.cat((self.pre_in_block(labels), z), -1)
+        x = torch.cat((self.pre_in_block['embedding_block'](labels), z), -1)
 
         # Input block
         x = self.in_block['in_block'](x)

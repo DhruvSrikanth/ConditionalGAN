@@ -1,3 +1,4 @@
+from random import sample
 import torch
 from torch.autograd import Variable
 import torchvision
@@ -142,6 +143,7 @@ class ConditionalGAN(object):
         valid_labels = self.get_validity_labels(batch_size=batch_size, type='real')
         fake_labels = self.get_validity_labels(batch_size=real_samples.shape[0], type='fake')
 
+
         # Measure discriminator's ability to classify real from generated samples
         real_loss = discriminator_loss_fn(self.discriminator(real_samples, real_labels), valid_labels)
 
@@ -149,7 +151,7 @@ class ConditionalGAN(object):
         z = self.sample_noise(batch_size=real_samples.shape[0])
         sample_labels = self.sample_labels(batch_size=real_samples.shape[0]) 
         
-        fake_loss = discriminator_loss_fn(self.discriminator(self.generator(z, sample_labels).detach()), fake_labels)
+        fake_loss = discriminator_loss_fn(self.discriminator(self.generator(z, sample_labels).detach(), sample_labels), fake_labels)
 
         # Compute total loss
         d_loss = (real_loss + fake_loss) / 2
@@ -221,7 +223,7 @@ class ConditionalGAN(object):
         valid_labels = self.get_validity_labels(batch_size=batch_size, type='real')
 
         # Loss measures generator's ability to fool the discriminator
-        g_loss = generator_loss_fn(self.discriminator(self.generator(z, sample_labels)), valid_labels)
+        g_loss = generator_loss_fn(self.discriminator(self.generator(z, sample_labels), sample_labels), valid_labels)
         
         # Backward pass
         g_loss.backward()

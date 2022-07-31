@@ -61,7 +61,7 @@ class Discriminator(nn.Module):
 
         # Define input block
         self.in_block = nn.ModuleDict({
-            'in_block': nn.Sequential(*block(in_features=int(np.prod(in_shape)), out_features=self.inter_dim, normalize=False, regularize=False))
+            'in_block': nn.Sequential(*block(in_features=self.num_classes + int(np.prod(in_shape)), out_features=self.inter_dim, normalize=False, regularize=False))
         })
 
         # Define intermediate blocks
