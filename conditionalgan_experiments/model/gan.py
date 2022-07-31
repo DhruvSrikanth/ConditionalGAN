@@ -32,7 +32,7 @@ class ConditionalGAN(object):
             None
         '''
         super(ConditionalGAN, self).__init__()
-        self.name = "Vanilla GAN" if name is None else name
+        self.name = "Conditional GAN" if name is None else name
         self.z_dim = z_dim
         self.g_blocks = g_blocks
         self.d_blocks = d_blocks
