@@ -284,7 +284,7 @@ class ConditionalGAN(object):
             The sampled labels.
         '''
         # Sample labels
-        labels = Variable(torch.LongTensor(np.random.randint(0, self.num_classes, batch_size)))
+        labels = Variable(torch.LongTensor(np.random.randint(0, self.num_classes, batch_size))).to(self.device)
 
         return labels
         

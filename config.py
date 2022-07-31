@@ -2,7 +2,7 @@ config = {
     'device' : {
         'home directory' : './',
         'initial seed': 1, 
-        'device type': 'cpu', 
+        'device type': 'mps', 
         
         }, 
     'data' : {
@@ -17,11 +17,11 @@ config = {
          'generator blocks' : 3, 
     }, 
     'discriminator' : {
-        'discriminator blocks' : 2, 
+        'discriminator blocks' : 3, 
     }, 
     'hyperparameters' : {
-        'latent dimension': 128,
-        'learning rate': 0.0002, 
+        'latent dimension': 256,
+        'learning rate': 0.0001, 
         'beta1': 0.5,
         'beta2': 0.999,
         'epochs': 200, 
